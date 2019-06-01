@@ -1,0 +1,529 @@
+<mission_data version="1.0" background_id_arme="a77fef59-a913-49a2-a2f7-d460c4d8909e" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start id_arme="a77fef59-a913-49a2-a2f7-d460c4d8909e">
+    <create type="player" x="51163.0" y="0.0" z="92130.0" angle="0" name="Artemis" />
+    <set_difficulty_level value="1" />
+    <set_variable name="current_difficulty" value="1.0" integer="yes" />
+    <set_skybox_index index="15" />
+    <set_object_property property="nebulaIsOpaque" />
+    <set_object_property property="sensorSetting" value="0" />
+    <set_object_property property="nonPlayerSpeed" value="100" />
+    <set_object_property property="nonPlayerShield" value="100" />
+    <set_object_property property="nonPlayerWeapon" value="100" />
+    <set_object_property property="playerWeapon" value="100" />
+    <set_object_property property="playerShields" value="100" />
+    <big_message title="Save the Whales" subtitle1="for Girl Power 2019" subtitle2="by T. Hopkins and C. Cooke" />
+    <set_variable name="bassi_or_benerito" randomIntLow="0" randomIntHigh="100" />
+    <!--Timers-->
+    <set_timer name="orders_timer" seconds="30" />
+    <set_timer name="five_minute_warning_timer" seconds="600" />
+    <set_timer name="one_minute_warning_timer" seconds="840" />
+    <set_timer name="times_up_timer" seconds="900" />
+    <!--Event trigger state variables-->
+    <set_variable name="orders_received" value="0.0" integer="yes" />
+    <set_variable name="five_minute_warning_given" value="0.0" integer="yes" />
+    <set_variable name="one_minute_warning_given" value="0.0" integer="yes" />
+    <set_variable name="waiting_for_scientists" value="0.0" integer="yes" />
+    <set_variable name="scientists_on_board" value="0.0" integer="yes" />
+    <set_variable name="whale_pod_1_created" value="0.0" integer="yes" />
+    <set_variable name="whale_pod_1_configured" value="0.0" integer="yes" />
+    <set_variable name="whale_pod_2_created" value="0.0" integer="yes" />
+    <set_variable name="whale_pod_2_configured" value="0.0" integer="yes" />
+    <set_variable name="extra_monsters_created" value="0.0" integer="yes" />
+    <set_variable name="extra_monsters_configured" value="0.0" integer="yes" />
+    <set_variable name="whales_encountered" value="0.0" integer="yes" />
+    <set_variable name="whales_post_encounter" value="0.0" integer="yes" />
+    <set_variable name="scientists_like_whales" value="0.0" integer="yes" />
+    <set_variable name="poacher_warning" value="0.0" integer="yes" />
+    <set_variable name="poachers_created" value="0.0" integer="yes" />
+    <set_variable name="poachers_configured" value="0.0" integer="yes" />
+    <set_variable name="poachers_removed" value="0.0" integer="yes" />
+    <set_variable name="trigger_pirates_mad" value="0.0" integer="yes" />
+    <set_variable name="w1_dead" value="0.0" integer="yes" />
+    <set_variable name="w2_dead" value="0.0" integer="yes" />
+    <set_variable name="w3_dead" value="0.0" integer="yes" />
+    <set_variable name="w4_dead" value="0.0" integer="yes" />
+    <set_variable name="w5_dead" value="0.0" integer="yes" />
+    <set_variable name="w6_dead" value="0.0" integer="yes" />
+    <set_variable name="w7_dead" value="0.0" integer="yes" />
+    <set_variable name="whales_all_dead" value="0.0" integer="yes" />
+    <set_variable name="artemis_do_something" value="0.0" integer="yes" />
+    <set_variable name="whales_dead_fail" value="0.0" integer="yes" />
+    <set_variable name="pirates_mad" value="0.0" integer="yes" />
+    <set_variable name="pirates_created" value="0.0" integer="yes" />
+    <set_variable name="pirates_configured" value="0.0" integer="yes" />
+    <set_variable name="respawn_pirate_fleet" value="0.0" integer="yes" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+    <set_variable name="pirate_sb1_surrended" value="0.0" integer="yes" />
+    <set_variable name="pirate_lb1_surrendered" value="0.0" integer="yes" />
+    <set_variable name="pirate_lb2_surrendered" value="0.0" integer="yes" />
+    <set_variable name="pirates_all_surrendered" value="0.0" integer="yes" />
+    <set_variable name="spacebeard_surrendered" value="0.0" integer="yes" />
+    <create count="100" type="asteroids" startAngle="50" endAngle="185" startX="107967.0" startY="0.0" startZ="35181.0" radius="70000" randomRange="12000" />
+    <set_variable name="bassi_congrats" value="0.0" integer="yes" />
+    <create count="75" type="nebulas" startX="23996.0" startY="0.0" startZ="84430.0" endX="23996.0" endY="0.0" endZ="84430.0" randomRange="10000" randomSeed="25" />
+    <!--Create Terrain-->
+    <create count="75" type="nebulas" startX="11066.0" startY="0.0" startZ="71501.0" endX="11066.0" endY="0.0" endZ="71501.0" randomRange="10000" randomSeed="10" />
+    <create count="30" type="nebulas" startX="70194.0" startY="0.0" startZ="21815.0" endX="70194.0" endY="0.0" endZ="21815.0" randomRange="8000" randomSeed="30" />
+    <create count="75" type="nebulas" startX="10339.0" startY="0.0" startZ="91259.0" endX="10339.0" endY="0.0" endZ="91259.0" randomRange="10000" randomSeed="5" />
+    <create count="30" type="nebulas" startX="62204.0" startY="0.0" startZ="29079.0" endX="62204.0" endY="0.0" endZ="29079.0" randomRange="8000" randomSeed="35" />
+    <create count="40" type="nebulas" startX="46514.0" startY="0.0" startZ="25157.0" endX="46514.0" endY="0.0" endZ="25157.0" randomRange="8000" randomSeed="40" />
+    <create type="station" x="22588.0" y="0.0" z="71445.0" angle="0" name="Curie Station" hullID="1004" sideValue="2" />
+    <create type="station" x="79056.0" y="0.0" z="38958.0" angle="0" name="DS1" hullID="1000" sideValue="2" />
+    <!--Bring on the pirates immediately for troubleshooting-->
+    <!--<set_variable value="1.0" name="pirates_mad" integer="yes" />-->
+    <!--<set_timer value="0.0" seconds="30" name="pirates_arrive_timer" />-->
+    <!---->
+  </start>
+  <folder_arme name="Set up monsters" id_arme="49fb4872-3020-4e68-8159-3757ae84d3dd" expanded_arme="" />
+  <folder_arme name="Set up Whale Pod 1" id_arme="6982b431-01f6-441e-840f-0c81b3d0efa5" parent_id_arme="49fb4872-3020-4e68-8159-3757ae84d3dd" expanded_arme="" />
+  <event name="Create Pod 1" id_arme="549b34a4-bdf0-40c1-9468-f465fcdcea03" parent_id_arme="6982b431-01f6-441e-840f-0c81b3d0efa5">
+    <if_variable name="whale_pod_1_created" comparator="EQUALS" value="0.0" />
+    <create type="monster" monsterType="1" age="1" podnumber="1" x="50146.0" y="0.0" z="32348.0" angle="190" name="W1" />
+    <create type="monster" monsterType="1" age="2" podnumber="1" x="50727.0" y="0.0" z="29297.0" angle="190" name="W2" />
+    <create type="monster" monsterType="1" age="2" podnumber="1" x="45787.0" y="0.0" z="32929.0" angle="190" name="W3" />
+    <create type="monster" monsterType="1" age="3" podnumber="1" x="46369.0" y="0.0" z="29878.0" angle="190" name="W4" />
+    <set_variable name="whale_pod_1_created" value="1.0" integer="yes" />
+    <set_timer name="whale_pod_1_config_timer" seconds="1" />
+  </event>
+  <event name="Config Pod 1" id_arme="f52f3560-e0ad-4111-b36e-b61f407ce8a0" parent_id_arme="6982b431-01f6-441e-840f-0c81b3d0efa5">
+    <if_timer_finished name="whale_pod_1_config_timer" />
+    <if_variable name="whale_pod_1_created" comparator="EQUALS" value="1.0" />
+    <if_variable name="whale_pod_1_configured" comparator="EQUALS" value="0.0" />
+    <set_object_property property="angle" value="0.175" name="W1" />
+    <set_object_property property="angle" value="0.175" name="W3" />
+    <set_object_property property="angle" value="0.175" name="W2" />
+    <set_object_property property="angle" value="0.175" name="W4" />
+    <add_ai type="PLAY_IN_ASTEROIDS" name="W1" />
+    <add_ai type="STAY_CLOSE" value1="2000" value2="0.0" name="W2" />
+    <add_ai type="STAY_CLOSE" value1="4000" value2="0.0" name="W3" />
+    <add_ai type="STAY_CLOSE" value1="5000" value2="0.0" name="W4" />
+    <set_variable name="whale_pod_1_configured" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Set up Whale Pod 2" id_arme="a18d9c85-82fe-47cd-8920-53d79ea14d16" parent_id_arme="49fb4872-3020-4e68-8159-3757ae84d3dd" />
+  <event name="Create Pod 2" id_arme="cc603a1d-1d91-4f52-a39c-848aa130b436" parent_id_arme="a18d9c85-82fe-47cd-8920-53d79ea14d16">
+    <if_variable name="whale_pod_2_created" comparator="EQUALS" value="0.0" />
+    <create type="monster" monsterType="1" age="2" podnumber="2" x="20800.0" y="0.0" z="15714.0" angle="295" name="W5" />
+    <create type="monster" monsterType="1" age="1" podnumber="2" x="21816.0" y="0.0" z="17893.0" angle="295" name="W6" />
+    <create type="monster" monsterType="1" age="1" podnumber="2" x="18911.0" y="0.0" z="17312.0" angle="295" name="W7" />
+    <set_variable name="whale_pod_2_created" value="1.0" integer="yes" />
+    <set_timer name="whale_pod_2_config_timer" seconds="1" />
+  </event>
+  <event name="Config Pod 2" id_arme="6e44ac0e-1cc0-49d1-8a16-10ffcacd362e" parent_id_arme="a18d9c85-82fe-47cd-8920-53d79ea14d16">
+    <if_variable name="whale_pod_2_configured" comparator="EQUALS" value="0.0" />
+    <if_variable name="whale_pod_2_created" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="whale_pod_2_config_timer" />
+    <set_object_property property="angle" value="1.83" name="W5" />
+    <set_object_property property="angle" value="1.83" name="W6" />
+    <set_object_property property="angle" value="1.83" name="W7" />
+    <add_ai type="RANDOM_PATROL" value1="1000.0" name="W5" />
+    <add_ai type="STAY_CLOSE" value1="2000" value2="0.0" name="W6" />
+    <add_ai type="STAY_CLOSE" value1="2000" value2="0.0" name="W7" />
+    <set_variable name="whale_pod_2_configured" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Set up additional monsters" id_arme="effdd78b-683b-4061-95e1-0be3743db2a5" parent_id_arme="49fb4872-3020-4e68-8159-3757ae84d3dd" />
+  <event name="Create additional monsters" id_arme="c2e0f0ec-78a8-4550-883c-f74ee195edb2" parent_id_arme="effdd78b-683b-4061-95e1-0be3743db2a5">
+    <if_variable name="extra_monsters_created" comparator="EQUALS" value="0.0" />
+    <create type="monster" monsterType="2" age="1" x="75860.0" y="0.0" z="22978.0" angle="270" name="Shark" />
+    <!--<create type="neutral" x="57555.0" y="0.0" z="53196.0" angle="0" name="Biomech" raceKeys="biomech" hullKeys="sentient Stage 1" sideValue="0" />-->
+    <set_variable name="extra_monsters_created" value="1.0" integer="yes" />
+    <set_timer name="extra_monster_config_timer" seconds="1" />
+  </event>
+  <event name="Config extra monsters" id_arme="6c936f7d-71f8-4581-82a1-ddccf4b7a002" parent_id_arme="effdd78b-683b-4061-95e1-0be3743db2a5">
+    <if_variable name="extra_monsters_configured" comparator="EQUALS" value="0.0" />
+    <if_variable name="extra_monsters_created" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="extra_monster_config_timer" />
+    <set_object_property property="angle" value="1.57" name="Shark" />
+    <set_variable name="extra_monsters_configured" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Orders" id_arme="c7c20261-0792-42e8-873a-559a991a4bdb" />
+  <event name="Orders from the Admiral" id_arme="ff812c95-103a-4ebd-aae4-3e0fd52121f1" parent_id_arme="c7c20261-0792-42e8-873a-559a991a4bdb">
+    <if_variable name="orders_received" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="orders_timer" />
+    <incoming_comms_text from="Admiral Bassi" sideValue="2" type="ALERT">Artemis, proceed to Curie Station and pick up Dr. Benerito and her team of top Space Whale scientists. Then locate and investigate a pod. We MUST find out what is killing off the Space Whales. Bassi out.</incoming_comms_text>
+    <set_variable name="orders_received" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Pick up Scientists" id_arme="a1566464-77d7-4e04-9efe-259f81f0cba2" />
+  <event name="Arrive at Curie Station" id_arme="885c7c6a-ff7b-4c4a-9d39-94117cadfc09" parent_id_arme="a1566464-77d7-4e04-9efe-259f81f0cba2">
+    <if_docked player_name="Artemis" name="Curie Station" />
+    <if_variable name="waiting_for_scientists" comparator="EQUALS" value="0.0" />
+    <set_variable name="waiting_for_scientists" value="1.0" integer="yes" />
+    <set_timer name="waiting_for_scientists_timer" seconds="15" />
+  </event>
+  <event name="Scientists on board" id_arme="03236403-f481-4eee-9e3d-3a86849ef353" parent_id_arme="a1566464-77d7-4e04-9efe-259f81f0cba2">
+    <if_docked player_name="Artemis" name="Curie Station" />
+    <if_variable name="scientists_on_board" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="waiting_for_scientists_timer" />
+    <set_variable name="scientists_on_board" value="1.0" integer="yes" />
+    <incoming_comms_text from="Curie Station" sideValue="2" type="STATION">Artemis, your science team is on board. Good luck with those whales!</incoming_comms_text>
+  </event>
+  <folder_arme name="Encounter whales" id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630" />
+  <event name="Arrive W1" id_arme="ec108d9d-bb3b-47a4-b369-1141173cca6d" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W1" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W2" id_arme="f0306018-c6ae-4ec1-a2ee-863b3a891d63" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W2" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W3" id_arme="f9d7f897-a025-4f2a-8f28-7b8dd3e5e817" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W3" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W4" id_arme="91dc52fc-95ce-430f-ab1d-abafbcffedf6" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W4" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W5" id_arme="f7729be2-3e9c-4270-9ecd-923c8b941e6c" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W5" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W6" id_arme="1e87614d-52da-44fe-b8c5-44371518617b" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W6" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Arrive W7" id_arme="c0b876bb-4ffb-4531-9f11-4763caccd5f6" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_distance name1="Artemis" name2="W7" comparator="LESS_EQUAL" value="1000.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="0.0" />
+    <set_variable name="whales_encountered" value="1.0" integer="yes" />
+  </event>
+  <event name="Post-encounter" id_arme="1d304140-af2c-4956-8506-8aa733dcd7ef" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_variable name="whales_post_encounter" comparator="EQUALS" value="0.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="1.0" />
+    <set_timer name="poacher_warning" seconds="10" />
+    <set_timer name="poachers_arrive_timer" seconds="30" />
+    <set_variable name="whales_post_encounter" value="1.0" integer="yes" />
+  </event>
+  <event name="Scientists like whales" id_arme="d3f1be9c-5f94-45f2-99f6-e6b6fb444b7e" parent_id_arme="0664fe2e-8419-48d7-99d1-79d0784d6630">
+    <if_variable name="scientists_like_whales" comparator="EQUALS" value="0.0" />
+    <if_variable name="scientists_on_board" comparator="EQUALS" value="1.0" />
+    <if_variable name="whales_encountered" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Dr. Benerito" sideValue="2" type="FRIEND">These whales are amazing. We're gathering excellent data. Take a look on the main viewer if you haven't already. They're beautiful!</incoming_comms_text>
+    <set_variable name="scientists_like_whales" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Poacher Ambush" id_arme="c3cf372c-e4d3-4dbb-8d47-f693099e20d6" />
+  <event name="Poacher warning" id_arme="dbe8bf92-5b1e-459b-99d1-a00968bbf19b" parent_id_arme="c3cf372c-e4d3-4dbb-8d47-f693099e20d6">
+    <if_variable name="poacher_warning" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="poacher_warning" />
+    <incoming_comms_text from="DS1" sideValue="2" type="ALERT">Attention all ships. Pirates and poachers have been spotted in the area. Be careful!</incoming_comms_text>
+    <set_variable name="poacher_warning" value="1.0" />
+  </event>
+  <folder_arme name="Set up poachers" id_arme="8b2a41b3-dd5b-4436-b0d3-97780c5e9d7d" parent_id_arme="c3cf372c-e4d3-4dbb-8d47-f693099e20d6" expanded_arme="" />
+  <event name="Create poachers" id_arme="425a94b7-01fe-481f-928c-6e0599ce945e" parent_id_arme="8b2a41b3-dd5b-4436-b0d3-97780c5e9d7d">
+    <if_variable name="poachers_created" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="poachers_arrive_timer" />
+    <create type="enemy" x="0.0" y="0.0" z="0.0" angle="0" name="Poacher" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" fleetnumber="1" />
+    <set_variable name="poachers_created" value="1.0" integer="yes" />
+  </event>
+  <event name="Configure poachers" id_arme="4088f849-902a-493d-bb1f-84dded753ffb" parent_id_arme="8b2a41b3-dd5b-4436-b0d3-97780c5e9d7d">
+    <if_variable name="poachers_configured" comparator="EQUALS" value="0.0" />
+    <if_variable name="poachers_created" comparator="EQUALS" value="1.0" />
+    <set_relative_position name2="Poacher" distance="5000" angle="45" name1="Artemis" />
+    <clear_ai name="Poacher" />
+    <add_ai type="CHASE_WHALE" name="Poacher" />
+    <add_ai type="CHASE_ANGER" name="Poacher" />
+    <add_ai type="SPCL_AI" name="Poacher" />
+    <set_variable name="poachers_configured" value="1.0" integer="yes" />
+  </event>
+  <event name="Poacher surrenders" id_arme="0f0bd338-9820-4180-a175-23bf2ece4aa1" parent_id_arme="c3cf372c-e4d3-4dbb-8d47-f693099e20d6">
+    <if_variable name="poachers_removed" comparator="EQUALS" value="0.0" />
+    <if_object_property property="hasSurrendered" name="Poacher" comparator="EQUALS" value="1" />
+    <set_variable name="poachers_removed" value="1.0" integer="yes" />
+    <incoming_comms_text from="Captain Spacebeard" sideValue="2" type="ENEMY">No one humiliates one of my whale hunters and gets away with it! We're taking you down, Artemis.</incoming_comms_text>
+    <set_variable name="pirates_mad" value="1.0" integer="yes" />
+    <set_timer name="pirates_arrive_timer" seconds="5" />
+  </event>
+  <event name="Poacher destroyed" id_arme="07bf5df8-5e92-4331-9ecc-facddf2afad2" parent_id_arme="c3cf372c-e4d3-4dbb-8d47-f693099e20d6">
+    <if_variable name="poachers_removed" comparator="EQUALS" value="0.0" />
+    <if_variable name="poachers_configured" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="Poacher" />
+    <set_variable name="poachers_removed" value="1.0" integer="yes" />
+    <incoming_comms_text from="Captain Spacebeard" sideValue="2" type="ENEMY">No one destroys one of my whale hunters and gets away with it! We're taking you down, Artemis.</incoming_comms_text>
+    <set_variable name="pirates_mad" value="1.0" integer="yes" />
+    <set_timer name="pirates_arrive_timer" seconds="5" />
+  </event>
+  <folder_arme name="Whales are Dying" id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441" expanded_arme="" />
+  <event name="W1 dead" id_arme="dcfa825b-bfb5-495a-a2eb-4379bce9a794" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_1_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w1_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W1" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w1_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W2 dead" id_arme="94c2c330-1687-47ea-be0c-5f7f15ad3eae" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_1_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w2_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W2" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w2_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W3 dead" id_arme="36d08037-921e-4c6e-be47-ba9658347843" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_1_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w3_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W3" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w3_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W4 dead" id_arme="b2507cf3-2acc-4a9b-857d-9976e216257f" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_1_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w4_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W4" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w4_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W5 dead" id_arme="72df22ce-421f-437f-823b-3b8b1bf04c03" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_2_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w5_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W5" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w5_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W6 dead" id_arme="0f79c245-c840-4662-8eec-89c1739817ef" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_2_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w6_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W6" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w6_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="W7 dead" id_arme="fbb2ac76-b5aa-440c-a6f8-772534d4834b" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whale_pod_2_configured" comparator="EQUALS" value="1.0" />
+    <if_variable name="w7_dead" comparator="EQUALS" value="0.0" />
+    <if_not_exists name="W7" />
+    <set_timer name="artemis_do_something_timer" seconds="5" />
+    <set_variable name="artemis_do_something" value="1.0" integer="yes" />
+    <set_variable name="w7_dead" value="1.0" integer="yes" />
+  </event>
+  <event name="Artemis do something - Always Bassi" id_arme="f8e22b1d-9d9a-4f76-9530-aff62b8c887c" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="artemis_do_something" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="artemis_do_something_timer" />
+    <if_variable name="scientists_on_board" comparator="EQUALS" value="0.0" />
+    <incoming_comms_text from="Admiral Bassi" sideValue="2" type="FRIEND">Artemis, a whale has just died. Do we have a poacher? Find out what's going on and put a stop to it.</incoming_comms_text>
+    <set_variable name="artemis_do_something" value="0.0" integer="yes" />
+  </event>
+  <event name="Artemis do something - Bassi" id_arme="edf55960-bb49-41e1-b066-f0ae4f971d60" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="artemis_do_something" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="artemis_do_something_timer" />
+    <if_variable name="scientists_on_board" comparator="EQUALS" value="1.0" />
+    <if_variable name="bassi_or_benerito" comparator="LESS_EQUAL" value="50.0" />
+    <incoming_comms_text from="Admiral Bassi" sideValue="2" type="FRIEND">Artemis, a whale has just died. Do we have a poacher? Find out what's going on and put a stop to it.</incoming_comms_text>
+    <set_variable name="artemis_do_something" value="0.0" integer="yes" />
+    <set_variable name="bassi_or_benerito" randomIntLow="0" randomIntHigh="100" />
+  </event>
+  <event name="Artemis do something - Benerito" id_arme="5e23dccd-f099-49aa-8961-0734d93c50c1" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="artemis_do_something" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="artemis_do_something_timer" />
+    <if_variable name="scientists_on_board" comparator="EQUALS" value="1.0" />
+    <if_variable name="bassi_or_benerito" comparator="GREATER" value="50.0" />
+    <incoming_comms_text from="Dr. Benerito" sideValue="2" type="FRIEND">Our sensors indicate a whale has died. Captain, you've to do something about this!</incoming_comms_text>
+    <set_variable name="artemis_do_something" value="0.0" integer="yes" />
+    <set_variable name="bassi_or_benerito" randomIntLow="0" randomIntHigh="100" />
+  </event>
+  <event name="Are all whales dead" id_arme="5f7aa28f-551a-418f-8052-050c7c00518d" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whales_all_dead" comparator="EQUALS" value="0.0" />
+    <if_variable name="w1_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w2_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w3_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w4_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w5_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w6_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="w7_dead" comparator="EQUALS" value="1.0" />
+    <set_variable name="whales_all_dead" value="1.0" integer="yes" />
+    <set_timer name="whales_dead_fail_timer" seconds="5" />
+  </event>
+  <event name="Whales dead fail" id_arme="b0e2b68f-2463-40f7-92d5-9c3fbf9fc660" parent_id_arme="9ecef5eb-0a5d-4b12-a231-645c36e65441">
+    <if_variable name="whales_all_dead" comparator="EQUALS" value="1.0" />
+    <if_variable name="whales_dead_fail" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="whales_dead_fail_timer" />
+    <incoming_comms_text from="Admiral Bassi" sideValue="2" type="FRIEND">Artemis, it looks like all the whales are dead! This is a sad day for the TSN. Find those responsible and bring them to justice, or don't bother coming back!</incoming_comms_text>
+    <set_variable name="whales_dead_fail" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Pirates Wrath" id_arme="c8cf4f76-90cf-4179-8a8d-664b40ccc6dc" expanded_arme="" />
+  <event name="Create pirate fleet" id_arme="db70d710-2fc2-48a7-b4d8-909ad85ac9f6" parent_id_arme="c8cf4f76-90cf-4179-8a8d-664b40ccc6dc">
+    <if_variable name="pirates_mad" comparator="EQUALS" value="1.0" />
+    <if_variable name="pirates_created" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="pirates_arrive_timer" />
+    <create type="enemy" x="0.0" y="0.0" z="0.0" angle="0" name="SB1" raceKeys="Pirate" hullKeys="Strongbow" sideValue="1" fleetnumber="2" />
+    <create type="enemy" x="0.0" y="0.0" z="0.0" angle="0" name="LB1" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" fleetnumber="2" />
+    <create type="enemy" x="0.0" y="0.0" z="0.0" angle="0" name="LB2" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" fleetnumber="2" />
+    <set_variable name="pirates_created" value="1.0" integer="yes" />
+  </event>
+  <event name="Configure pirate fleet" id_arme="b6f178f9-5a7f-4d42-b580-3fd46f7ba306" parent_id_arme="c8cf4f76-90cf-4179-8a8d-664b40ccc6dc">
+    <if_variable name="pirates_configured" comparator="EQUALS" value="0.0" />
+    <if_variable name="pirates_created" comparator="EQUALS" value="1.0" />
+    <set_relative_position name2="SB1" distance="20000" angle="45" name1="Artemis" />
+    <set_relative_position name2="LB1" distance="1000" angle="45" name1="SB1" />
+    <set_relative_position name2="LB2" distance="1000" angle="315" name1="SB1" />
+    <set_variable name="respawn_pirate_fleet" value="1.0" integer="yes" />
+    <set_variable name="pirates_configured" value="1.0" integer="yes" />
+    <!--Replace brain stack for SB1-->
+    <clear_ai name="SB1" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="SB1" />
+    <add_ai type="CHASE_PLAYER" name="SB1" />
+    <add_ai type="CHASE_ANGER" name="SB1" />
+    <add_ai type="LEADER_LEADS" name="SB1" />
+    <add_ai type="FOLLOW_LEADER" name="SB1" />
+    <add_ai type="SPCL_AI" name="SB1" />
+    <!--Replace brain stack for LB1-->
+    <clear_ai name="LB1" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="LB1" />
+    <add_ai type="CHASE_PLAYER" name="LB1" />
+    <add_ai type="CHASE_ANGER" name="LB1" />
+    <add_ai type="LEADER_LEADS" name="LB1" />
+    <add_ai type="FOLLOW_LEADER" name="LB1" />
+    <add_ai type="SPCL_AI" name="LB1" />
+    <!--Replace brain stack for LB2-->
+    <clear_ai name="LB2" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="LB2" />
+    <add_ai type="CHASE_PLAYER" name="LB2" />
+    <add_ai type="CHASE_ANGER" name="LB2" />
+    <add_ai type="LEADER_LEADS" name="LB2" />
+    <add_ai type="FOLLOW_LEADER" name="LB2" />
+    <add_ai type="SPCL_AI" name="LB2" />
+  </event>
+  <event name="Respawn pirate fleet" id_arme="11f8da51-c078-4431-9b2b-8ea1ac7a3e39" parent_id_arme="c8cf4f76-90cf-4179-8a8d-664b40ccc6dc">
+    <if_variable name="respawn_pirate_fleet" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="SB1" />
+    <if_not_exists name="LB1" />
+    <if_not_exists name="LB2" />
+    <set_variable name="respawn_pirate_fleet" value="0.0" integer="yes" />
+    <set_timer name="pirates_arrive_timer" seconds="30" />
+    <set_variable name="pirates_configured" value="0.0" />
+    <set_variable name="pirates_created" value="0.0" integer="yes" />
+    <set_variable name="current_difficulty" value="current_difficulty+1" integer="yes" />
+    <set_variable name="difficulty_changed" value="1.0" integer="yes" />
+    <incoming_comms_text from="Captain Spacebeard" sideValue="2" type="ENEMY">You think that's the end of us? There's plenty more ships where those come from!</incoming_comms_text>
+  </event>
+  <folder_arme name="Pirates surrender" id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a" parent_id_arme="c8cf4f76-90cf-4179-8a8d-664b40ccc6dc" />
+  <event name="SB1 surrenders" id_arme="cee10144-2627-430b-8d08-9f3b78bf9d97" parent_id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a">
+    <if_variable name="pirates_all_surrendered" comparator="EQUALS" value="0.0" />
+    <if_object_property property="hasSurrendered" name="SB1" comparator="EQUALS" value="1" />
+    <set_object_property property="hasSurrendered" value="1" name="LB1" />
+    <set_object_property property="hasSurrendered" value="1" name="LB2" />
+    <set_timer name="spacebeard_surrender_timer" seconds="15" />
+    <set_variable name="pirates_all_surrendered" value="1.0" integer="yes" />
+  </event>
+  <event name="LB1 surrenders" id_arme="f7795e70-36f5-4c9e-87b9-9501b742fb1a" parent_id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a">
+    <if_variable name="pirates_all_surrendered" comparator="EQUALS" value="0.0" />
+    <if_object_property property="hasSurrendered" name="LB1" comparator="EQUALS" value="1" />
+    <set_object_property property="hasSurrendered" value="1" name="SB1" />
+    <set_object_property property="hasSurrendered" value="1" name="LB2" />
+    <set_timer name="spacebeard_surrender_timer" seconds="15" />
+    <set_variable name="pirates_all_surrendered" value="1.0" integer="yes" />
+  </event>
+  <event name="LB2 surrenders" id_arme="64200e11-1a5c-48f0-84c5-316da606c47d" parent_id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a">
+    <if_variable name="pirates_all_surrendered" comparator="EQUALS" value="0.0" />
+    <if_object_property property="hasSurrendered" name="LB2" comparator="EQUALS" value="1" />
+    <set_object_property property="hasSurrendered" value="1" name="LB1" />
+    <set_object_property property="hasSurrendered" value="1" name="SB1" />
+    <set_timer name="spacebeard_surrender_timer" seconds="15" />
+    <set_variable name="pirates_all_surrendered" value="1.0" integer="yes" />
+  </event>
+  <event name="Spacebeard surrenders" id_arme="f4120eb7-9881-48ed-aee3-5ad4f67ba097" parent_id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a">
+    <if_variable name="spacebeard_surrendered" comparator="EQUALS" value="0.0" />
+    <if_variable name="pirates_all_surrendered" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="spacebeard_surrender_timer" />
+    <set_timer name="bassi_congrats_timer" seconds="15" />
+    <incoming_comms_text from="Captain Spacebeard" sideValue="2" type="ENEMY">I guess there's no stopping the mighty Artemis and her crew. You've got us on the run for now, but watch your back in those dark space station corridors...</incoming_comms_text>
+    <set_variable name="respawn_pirate_fleet" value="0.0" integer="yes" />
+    <set_variable name="spacebeard_surrendered" value="1.0" integer="yes" />
+  </event>
+  <event name="Bassi congrats" id_arme="2cfe7e3d-638d-41b9-b743-e7391d50a809" parent_id_arme="0c648f1c-b6ab-4487-9cfa-4dbcc1742c8a">
+    <if_variable name="bassi_congrats" comparator="EQUALS" value="0.0" />
+    <if_variable name="spacebeard_surrendered" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="bassi_congrats_timer" />
+    <incoming_comms_text from="Admiral Bassi" sideValue="2" type="FRIEND">Good work, Artemis! You've forced the poachers to surrender. I've entered a commendation on the records for each of your crew. Please return to your scientific work. But keep an eye out for more trouble!</incoming_comms_text>
+    <set_variable name="bassi_congrats" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Change Difficulty" id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d" />
+  <event name="Set difficulty 2" id_arme="7d97ab9b-4587-4e04-8484-987c743ca86d" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="2.0" />
+    <set_difficulty_level value="2" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 3" id_arme="f29c12f7-439a-4ffc-a84f-9f86cd371b74" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="3.0" />
+    <set_difficulty_level value="3" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 4" id_arme="2c84c151-2d02-447f-acf9-e2ef78bd3dfa" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="4.0" />
+    <set_difficulty_level value="4" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 5" id_arme="d74482ca-d53a-434e-898b-c0bf14493892" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="5.0" />
+    <set_difficulty_level value="5" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 6" id_arme="b1eb0060-f219-4a13-85a1-90039b6f8c7a" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="6.0" />
+    <set_difficulty_level value="6" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 7" id_arme="06025904-c955-4fee-a782-796b8ed6b629" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="7.0" />
+    <set_difficulty_level value="7" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 8" id_arme="126a1557-ac91-461b-8f42-5d5d23a4c7c0" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="8.0" />
+    <set_difficulty_level value="8" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 9" id_arme="628b4616-57f4-4532-a280-3f02a20d5412" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="9.0" />
+    <set_difficulty_level value="9" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 10" id_arme="4c71c4c7-82dd-4d17-aec1-0de01737f83f" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="10.0" />
+    <set_difficulty_level value="10" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <event name="Set difficulty 11" id_arme="ebac8eed-f28d-45a8-a1cd-918133826ed7" parent_id_arme="7787847d-83c1-4e05-98ee-3ccbcfb16d7d">
+    <if_variable name="difficulty_changed" comparator="EQUALS" value="1.0" />
+    <if_variable name="current_difficulty" comparator="EQUALS" value="11.0" />
+    <set_difficulty_level value="11" />
+    <set_variable name="difficulty_changed" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Time Warnings and Finale" id_arme="9944ac35-d46b-4c22-ad01-b769abe92781" expanded_arme="" />
+  <event name="Five minute warning" id_arme="f2e4310b-9347-4963-a0e3-1018e6095dcc" parent_id_arme="9944ac35-d46b-4c22-ad01-b769abe92781">
+    <if_timer_finished name="five_minute_warning_timer" />
+    <if_variable name="five_minute_warning_given" comparator="EQUALS" value="0.0" />
+    <big_message title="Five Minute Warning" />
+    <play_sound_now filename="dat\Missions\MISS_SaveTheWhales\timer-warning.wav" />
+    <set_variable name="five_minute_warning_given" value="1.0" integer="yes" />
+  </event>
+  <event name="One minute warning" id_arme="2728c858-2f48-4f0c-92ea-89cf9b5805be" parent_id_arme="9944ac35-d46b-4c22-ad01-b769abe92781">
+    <if_variable name="one_minute_warning_given" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="one_minute_warning_timer" />
+    <big_message title="One Minute Warning" />
+    <play_sound_now filename="dat\Missions\MISS_SaveTheWhales\timer-warning.wav" />
+    <set_variable name="one_minute_warning_given" value="1.0" integer="yes" />
+  </event>
+  <event name="Times up" id_arme="9f97fb0a-d56c-47b1-8037-3f72974b0589" parent_id_arme="9944ac35-d46b-4c22-ad01-b769abe92781">
+    <if_timer_finished name="times_up_timer" />
+    <big_message title="Game Over" />
+    <end_mission />
+  </event>
+</mission_data>
