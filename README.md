@@ -16,7 +16,7 @@ A fixed 15 minutes
 2.7.1
 
 # Installation
-Clone or unzip the repo into C:\Program Files (x86)\Artemis\dat\Missions in a directory called "MISS_SaveTheWhales".
+Clone or unzip the repo into C:\Program Files (x86)\Artemis\dat\Missions in a directory called "MISS_SaveTheWhales". You will probably need to elevate to Administrator privileges to do this.
 
 # Notes
 This mission was written for a STEM event, so it provides a gentle but also time-limited introduction to Artemis with a story that allows for some combat, but it not overtly aggressive.
